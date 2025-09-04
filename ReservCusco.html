@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour 1 Día Cusco y Reserva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        /* Sección de descripción y detalles */
+        .tour-section {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 2em;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tour-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .tour-header h1 {
+            font-size: 2em;
+            color: #333;
+        }
+
+        .tour-header .rating {
+            font-size: 1.2em;
+            color: #ff0066;
+            font-weight: bold;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .section-tabs a {
+            text-decoration: none;
+            color: #ff0066;
+            padding: 10px;
+            border-bottom: 3px solid transparent;
+            font-weight: bold;
+        }
+
+        .section-tabs a.active {
+            border-bottom: 3px solid #ff0066;
+        }
+
+        /* Descripción y detalles */
+        .description, .details {
+            margin-top: 20px;
+        }
+
+        .description h2, .details h2 {
+            color: #333;
+        }
+
+        .description p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .details ul {
+            list-style: none;
+            padding: 0;
+            color: #555;
+        }
+
+        .details ul li {
+            padding: 5px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        /* Estilo del carrito de compras */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .tour-details, .summary-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tour-details {
+            width: 60%;
+        }
+
+        .tour-summary {
+            width: 35%;
+        }
+
+        .tour-details img {
+            width: 100px;
+            border-radius: 5px;
+        }
+
+        .tour-info {
+            margin-bottom: 20px;
+        }
+
+        .tour-info p {
+            margin: 5px 0;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="number"] {
+            width: 50px;
+        }
+
+        .summary-box {
+            text-align: center;
+            padding: 30px;
+            font-size: 1.2em;
+        }
+
+        .summary-box p {
+            margin: 15px 0;
+        }
+
+        .btn-reservar {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-reservar:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sección de descripción del tour -->
+<section class="tour-section">
+    <div class="tour-header">
+        <h1>Tour 1 Día Cusco</h1>
+        <span class="rating">9.4 / 10</span>
+    </div>
+
+    <!-- Galería de imágenes -->
+    <div class="gallery">
+        <img src="/img/tour1-day1.jpg" alt="Imagen 1">
+        <img src="/img/tour1-day2.jpg" alt="Imagen 2">
+        <img src="/img/tour1-day3.jpg" alt="Imagen 3">
+        <img src="/img/tour1-day4.jpg" alt="Imagen 4">
+    </div>
+
+    <!-- Secciones de descripción y detalles -->
+    <div class="section-tabs">
+        <a href="#descripcion" class="active">Descripción</a>
+        <a href="#detalles">Detalles</a>
+    </div>
+
+    <!-- Descripción del tour -->
+    <div class="description" id="descripcion">
+        <h2>Descripción</h2>
+        <p>
+            Disfruta de un tour único de un día completo en Cusco, donde podrás explorar los lugares más emblemáticos de esta histórica ciudad. El tour incluye visitas guiadas, transporte y almuerzo. No te pierdas esta experiencia increíble.
+        </p>
+    </div>
+
+    <!-- Detalles del tour -->
+    <div class="details" id="detalles">
+        <h2>Detalles</h2>
+        <ul>
+            <li><strong>Duración:</strong> 8 horas</li>
+            <li><strong>Incluido:</strong> Transporte, guía turístico, almuerzo</li>
+            <li><strong>Cuándo reservar:</strong> Hasta 24 horas antes de la salida</li>
+            <li><strong>Tipo de bono:</strong> Electrónico, presentar desde tu móvil</li>
+            <li><strong>Accesibilidad:</strong> No accesible para sillas de ruedas</li>
+            <li><strong>Precio:</strong> 120 USD </strong></li>
+        </ul>
+    </div>
+</section>
+
+<!-- Carrito de compras para reservar -->
+<div class="container">
+    <!-- Detalles del Tour para la Reserva -->
+    <div class="tour-details">
+        <h2>City Tour en Cusco</h2>
+
+
+        <form id="tour-form">
+            <label for="adultos">Adultos:</label>
+            <input type="number" id="adultos" name="adultos" min="1" value="1">
+
+            <label for="ninos">Niños:</label>
+            <input type="number" id="ninos" name="ninos" min="0" value="0">
+
+            <label for="fecha">Fecha del Tour:</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <label for="hora">Hora del Tour:</label>
+            <select id="hora" name="hora" required>
+                <option value="">Seleccione una hora</option>
+                <option value="9:00 AM">9:00 AM</option>
+                <option value="14:00">14:00</option>
+            </select>
+
+            <label for="hotel">Hotel - Dirección de Recogida:</label>
+            <input type="text" id="hotel" name="hotel" required>
+
+            <label for="comentarios">Requisitos especiales y otra información relevante:</label>
+            <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+        </form>
+    </div>
+
+    <!-- Resumen de Compra -->
+    <div class="summary-box">
+        <h2>Resumen del Tour</h2>
+        <p>x <span id="total-adultos">1</span> Adulto</p>
+        <p>x <span id="total-ninos">0</span> Niño</p>
+        <hr>
+        <p>Subtotal: <span id="subtotal">120.00</span> US$</p>
+        <p>Cantidad de depósito: 
+            <select id="deposito" onchange="calcularTotal()">
+                <option value="100">100%</option>
+                <option value="50">50%</option>
+                <option value="25">25%</option>
+            </select>
+        </p>
+        <hr>
+        <p>Total: <strong id="total">120.00</strong> US$</p>
+        <button class="btn-reservar" onclick="reservar()">RESERVAR AHORA</button>
+    </div>
+</div>
+
+<script>
+    // Precios
+    const precioAdulto = 120;
+    const precioNino = 30;
+
+    // Elementos del DOM
+    const adultosInput = document.getElementById('adultos');
+    const ninosInput = document.getElementById('ninos');
+    const subtotalElement = document.getElementById('subtotal');
+    const totalElement = document.getElementById('total');
+    const totalAdultosElement = document.getElementById('total-adultos');
+    const totalNinosElement = document.getElementById('total-ninos');
+    const depositoSelect = document.getElementById('deposito');
+
+    // TOTAL
+
+    function calcularTotal() {
+        const numeroAdultos = parseInt(adultosInput.value);
+        const numeroNinos = parseInt(ninosInput.value);
+
+        // Actualizar cantidades en la sección de resumen
+        totalAdultosElement.textContent = numeroAdultos;
+        totalNinosElement.textContent = numeroNinos;
+
+        // SUBTOTAL
+        const subtotal = (numeroAdultos * precioAdulto) + (numeroNinos * precioNino);
+        subtotalElement.textContent = subtotal.toFixed(2);
+
+        // PORCENTAJE DE DEPOSITO
+        const porcentajeDeposito = parseInt(depositoSelect.value);
+        const total = (subtotal * porcentajeDeposito) / 100;
+        totalElement.textContent = total.toFixed(2);
+    }
+
+    // Escuchar cambios en el número de adultos y niños
+    adultosInput.addEventListener('change', calcularTotal);
+    ninosInput.addEventListener('change', calcularTotal);
+
+    // Función para simular la reserva
+    function reservar() {
+        alert("Reserva realizada exitosamente!");
+    }
+
+    // Inicializar el cálculo total
+    calcularTotal();
+</script>
+
+</body>
+</html>
+
+
+

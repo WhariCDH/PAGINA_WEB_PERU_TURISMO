@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+   /* Estilos Generales */
+   body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(248, 248, 248);
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none; /* Esto elimina el subrayado */
+
+        }
+
+        h1 {
+            color: #333;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 24px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Menú de Navegación */
+        nav {
+            background-color: #4d7486;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffff99;
+        }
+
+        /* Submenús */
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #4d7486;
+            padding: 10px;
+            border-radius: 5px;
+            list-style: none;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul ul li {
+            padding: 8px 0;
+        }
+
+        nav ul ul li a {
+            color: white;
+            font-size: 14px;
+        }
+
+        nav ul ul li a:hover {
+            color: #ffff99;
+        }
+
+        /* Secciones */
+        section {
+            padding: 50px;
+            background-color: white;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section h1 {
+            font-size: 28px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border-bottom: 3px solid #4d7486;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* Estilos de los botones y enlaces */
+        #resaltar1 {
+        color: rgb(228, 228, 228);
+        font: size 5px;
+                 
+        }
+
+        #resaltar2 {
+            color: rgb(0, 0, 0);
+            font-size: 15pt;
+            font-style: italic;
+        }
+
+        /* Logo */
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+        .user-icon img {
+            width: 30px; /* Ajusta el tamaño de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-right: 10px; /* Espacio entre la imagen y el texto */
+        }
+        /* Header estilo fijo */
+        nav {
+            background-color: #4d7486;
+            color: white;
+            padding: 1em;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+    
+        nav ul li {
+            display: inline;
+        }
+    
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    
+        /* Contenedor principal */
+        .tour-section {
+            max-width: 1200px;
+            margin: 80px auto 0; /* Ajusta por la barra fija */
+            padding: 2em;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        .tour-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        .main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    
+        /* Estilo de la cuadrícula de los tours */
+        .tour-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+    
+        .tour-item {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1em;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        .tour-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            
+        }
+    
+        .star-rating {
+            color: #f39c12;
+            font-weight: bold;
+            
+        }
+    
+        .precio {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+        }
+    
+        .btn-reservar {
+            background-color: #4d7486;
+            color: white;
+            border: none;
+            padding: 0.8em 1.5em;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .btn-reservar:hover {
+            background-color: #4d7486;
+        }
+    
+
+        /* Footer General */
+       .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin: 20px;
+        }
+
+        .footer h3 {
+            font-size: 18px;
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        .footer p, .footer a, .footer li {
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.6;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffcc00;
+        }
+
+        /* Contacto */
+        .contact-info p {
+            margin: 0;
+        }
+
+        /* Horarios */
+        .footer .horario {
+            margin: 10px 0;
+        }
+
+       
+        /* Estilos Adicionales */
+        .payment-methods img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        html, body {
+    height: 100%; 
+    margin: 0; 
+    }
+
+     .footer-bottom {
+    position: relative; 
+    width: 100%;
+    text-align: center;
+    padding: 20px 0; 
+    background-color:#333;
+    bottom: 0; 
+}
+
+    body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+   }
+
+   .main-content {
+    flex: 1; 
+
+ /* Adaptabilidad */
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+} 
+    </style>
+    </head>
+    <body>
+    
+   <!-- Menú de navegación -->
+ <nav>
+   
+    <ul>
+        <li><a href="/inicio.html" id="resaltar1">Inicio</a></li>
+        <li><a href="excursiones.html" id="resaltar1">Tours en Lima <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <ul>
+                <li><a href="http://localhost/pag/tours en lima/callao.html" id="resaltar2">Excursiones en Callao</a></li>
+                <li><a href="/tours en lima/lunahuana.html" id="resaltar2">Tours en Lunahuana</a></li>
+                <li><a href="/tours en lima/pachacamac.html" id="resaltar2">Tours en Pachacamac</a></li>
+                <li><a href="/tours en lima/miraflores.html" id="resaltar2">Tours en Miraflores</a></li>
+            </ul>
+        </li>
+        <li><a href="excursiones.html" id="resaltar1">Tours en Cusco <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <ul>
+                <li><a href="/tours en cusco/tourcusco.html" id="resaltar2">Tour de un dia Cusco</a></li>
+                <li><a href="/tours en cusco/excursiones.html" id="resaltar2">Excursiones Varios Días</a></li>
+                <li><a href="/tours en cusco/Desde.html" id="resaltar2">Tours a Machu Picchu desde Cusco</a></li>
+            </ul>
+            <li><a href="http://localhost/pag/contacto.php" id="resaltar1">Contacto</a></li>
+            <li><a href="/quejas.html" id="resaltar1">Quejas y Reclamos</a></li>
+            <li><a href="/login.html" class="user-icon">
+            <img src="/user-icon.png" alt="Usuario">
+            </a></li>
+    </ul>
+</nav>
+    
+    <!-- Main Content -->
+    <section class="tour-section">
+      <div class="tour-header">
+          <h1>TOUR EN CALLAO</h1>
+          <img src="/img/imagen23.jpg" alt="callo" class="main-image">
+      </div>
+    
+      <div class="tour-details">
+          <figure class="tour-item">
+              <img src="/img/imagen24.jpg" alt="Callao Monumental Historia Arte y Color ">
+              <figcaption>Callao Monumental Historia Arte y Color</figcaption><br>
+              <span class="star-rating">4.8/5.0 ★★★★☆</span><br>
+              <p class="precio">$ 45.00 Por Persona</p><br>
+              <a href="/callaoreserva/callaomonumental.html" class="btn-reservar">Reservar</a>
+          </figure>
+    
+          <figure class="tour-item">
+              <img src="/img/imagen26.jpg" alt="Visita a la Catedral y los Conventos de Lima desde el Puerto del Callao"> 
+              <figcaption>Visita a la Catedral y los Conventos de Lima desde el Puerto del Callao</figcaption>
+              <span class="star-rating">4.7/5.0 ★★★★☆</span>
+              <p class="precio">$ 75.00 Por Persona</p>
+              <a href="/callaoreserva/callaocatedral.html" class="btn-reservar">Reservar</a>
+          </figure>
+    
+          <figure class="tour-item">
+           <img src="/img/imagen25.jpg" alt="Tour a Pachacamac, Barranco y Callao Monumental">
+           <figcaption>Pachacamac, Barranco y Callao Monumental desde Puerto Callao</figcaption><br>
+           <span class="star-rating">4.7/5.0 ★★★★☆</span><br>
+           <p class="precio">$ 100.00 Por Persona</p>
+           <a href="/callaoreserva/callaoBarranco.html" class="btn-reservar">Reservar</a>
+       </figure>
+       <figure class="tour-item">
+        <img src="/img/imagen27.jpg" alt="Islas Palomino | Palomino Islands">
+        <figcaptionExplorar>Islas Palomino | Palomino Islands</figcaption><br>
+        <span class="star-rating">4.7/5.0 ★★★★☆</span><br>
+        <p class="precio">$ 60.00 Por Persona</p><br>
+        <a href="/callaoreserva/callaoisla.html" class="btn-reservar">Reservar</a>
+    </figure>
+    
+    
+      </div>
+    </section>
+    
+    <!-- Footer -->
+<div class="footer">
+    <!-- Sección Contacto -->
+    <div class="footer-section contact-info">
+        <h3>CONTÁCTANOS</h3>
+        <p>+51 920 245 758</p>
+        <p>+51 957 587 720</p>
+        <p>+51 986 221 958</p>
+        <p><a href="mailto:info@incatrilogytours.com">info@incatrilogytours.com</a></p>
+        <p><a href="mailto:reservas@incatrilogytours.com">reservas@incatrilogytours.com</a></p>
+        <p>Jirón Lampa 231, Cercado de Lima</p>
+        <p>Av, Larco Miraflores 1150 - Local #17, Primer piso</p>
+    </div>
+
+    <!-- Sección Métodos de Pago -->
+    <div class="footer-section payment-methods">
+        <h3>MÉTODOS DE PAGO</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+    </div>
+
+    <!-- Sección Horario -->
+    <div class="footer-section">
+        <h3>HORARIO DE OFICINA</h3>
+        <p class="horario">Lunes a Sábado: 9:00AM - 1:00PM | 4:00PM - 8:00PM</p>
+        <p class="horario">Domingos: 10:00AM - 7:00PM</p>
+        <h3>HORARIO DE EQUIPO DE VENTAS</h3>
+        <p class="horario">Lunes a Sábado: 9:00AM - 1:00PM | 4:00PM - 8:00PM</p>
+        <p class="horario">Domingos: 2:00PM - 6:00PM</p>
+    </div>
+
+    <!-- Sección Menú de Navegación -->
+    <div class="footer-section">
+        <h3>MENÚ DE NAVEGACIÓN</h3>
+        <ul>
+            <li><a href="#inicio" id="resaltar1">Inicio</a></li>
+            <li><a href="excursiones.html" id="resaltar1">Tours en Lima <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <li><a href="excursiones.html" id="resaltar1">Tours en Cusco <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <li><a href="#contacto" id="resaltar1">Contacto</a></li>
+            <li><a href="#inicio" id="resaltar1">Quejas y Reclamos</a></li>
+        </ul>
+    </div>
+
+
+</div>
+<!-- Footer Bottom -->
+
+<div class="footer-bottom">
+    <p>&copy; Inca Trilogy Tours 2024. Todos los derechos reservados.</p>
+    <a href="#politica-privacidad">Política de Privacidad</a> | <a href="#terminos-condiciones">Términos y Condiciones</a>
+</div>
+</body>
+</html>

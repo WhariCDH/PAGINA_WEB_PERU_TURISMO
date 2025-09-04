@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        /* Estilos Generales */
+     body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(248, 248, 248);
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none; /* Esto elimina el subrayado */
+
+        }
+
+        h1 {
+            color: #333;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 24px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Menú de Navegación */
+        nav {
+            background-color: #4d7486;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffff99;
+        }
+
+        /* Submenús */
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #4d7486;
+            padding: 10px;
+            border-radius: 5px;
+            list-style: none;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul ul li {
+            padding: 8px 0;
+        }
+
+        nav ul ul li a {
+            color: white;
+            font-size: 14px;
+        }
+
+        nav ul ul li a:hover {
+            color: #ffff99;
+        }
+
+        /* Secciones */
+        section {
+            padding: 50px;
+            background-color: white;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section h1 {
+            font-size: 28px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border-bottom: 3px solid #4d7486;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* Estilos de los botones y enlaces */
+        #resaltar1 {
+        color: rgb(228, 228, 228);
+        font: size 5px;
+                 
+        }
+
+        #resaltar2 {
+            color: rgb(0, 0, 0);
+            font-size: 15pt;
+            font-style: italic;
+        }
+
+        /* Logo */
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+        .user-icon img {
+            width: 30px; /* Ajusta el tamaño de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-right: 10px; /* Espacio entre la imagen y el texto */
+        }
+
+/* Header fijo */
+nav {
+    background-color: #4d7486;
+    color: white;
+    padding: 1em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Contenedor principal */
+.tour-section {
+    max-width: 1200px;
+    margin: 80px auto 0; /* Ajuste por la barra fija */
+    padding: 2em;
+    background-color: rgb(216, 216, 216);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tour-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tour-header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.tour-header .rating {
+    font-size: 1.2em;
+    color: #ff0066;
+    font-weight: bold;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.section-tabs a {
+    text-decoration: none;
+    color: #000000;
+    padding: 10px;
+    border-bottom: 3px solid transparent;
+    font-weight: bold;
+}
+
+.section-tabs a.active {
+    border-bottom: 3px solid #000000;
+}
+
+/* Descripción y detalles */
+.description, .details {
+    margin-top: 20px;
+}
+
+.description h2, .details h2 {
+    color: #333;
+}
+
+.description p {
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Detalles */
+.details {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.details ul {
+    list-style: none;
+    padding: 0;
+    color: #555;
+}
+
+.details ul li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+/* Estilo del carrito de compras */
+.container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .tour-details, .summary-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tour-details {
+            width: 60%;
+        }
+
+        .tour-summary {
+            width: 35%;
+        }
+
+        .tour-details img {
+            width: 100px;
+            border-radius: 5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="number"] {
+            width: 50px;
+        }
+
+        .summary-box {
+            text-align: center;
+            padding: 30px;
+            font-size: 1.2em;
+        }
+
+        .summary-box p {
+            margin: 15px 0;
+        }
+
+        .btn-reservar {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-reservar:hover {
+            background-color: #0056b3;
+        }
+/* Footer General */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: Arial, sans-serif;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.footer p, .footer a, .footer li {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ffcc00;
+}
+
+/* Contacto */
+.contact-info p {
+    margin: 0;
+}
+
+/* Horarios */
+.footer .horario {
+    margin: 10px 0;
+}
+
+
+/* Estilos Adicionales */
+.payment-methods img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+html, body {
+height: 100%; 
+margin: 0; 
+}
+
+.footer-bottom {
+position: relative; 
+width: 100%;
+text-align: center;
+padding: 20px 0; 
+background-color:#333;
+bottom: 0; 
+}
+
+body {
+display: flex;
+flex-direction: column;
+min-height: 100vh; 
+}
+
+.main-content {
+flex: 1; 
+
+/* Adaptabilidad */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+}
+/* Footer General */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: Arial, sans-serif;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.footer p, .footer a, .footer li {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ffcc00;
+}
+
+/* Contacto */
+.contact-info p {
+    margin: 0;
+}
+
+/* Horarios */
+.footer .horario {
+    margin: 10px 0;
+}
+
+
+/* Estilos Adicionales */
+.payment-methods img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+html, body {
+height: 100%; 
+margin: 0; 
+}
+
+.footer-bottom {
+position: relative; 
+width: 100%;
+text-align: center;
+padding: 20px 0; 
+background-color:#333;
+bottom: 0; 
+}
+
+body {
+display: flex;
+flex-direction: column;
+min-height: 100vh; 
+}
+
+.main-content {
+flex: 1; 
+
+/* Adaptabilidad */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+} 
+
+    </style>
+</head>
+<body>
+
+<!-- Menú de navegación -->
+<nav>
+   
+    <ul>
+        <li><a href="/inicio.html" id="resaltar1">Inicio</a></li>
+        <li><a href="" id="resaltar1">Tours en Lima <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <ul>
+                <li><a href="/tours en lima/callao.html" id="resaltar2">Excursiones en Callao</a></li>
+                <li><a href="/tours en lima/lunahuana.html" id="resaltar2">Tours en Lunahuana</a></li>
+                <li><a href="/tours en lima/pachacamac.html" id="resaltar2">Tours en Pachacamac</a></li>
+                <li><a href="/tours en lima/miraflores.html" id="resaltar2">Tours en Miraflores</a></li>
+            </ul>
+        </li>
+        <li><a href="excursiones.html" id="resaltar1">Tours en Cusco <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <ul>
+                <li><a href="/tours en cusco/tourcusco.html" id="resaltar2">Tour de un dia Cusco</a></li>
+                <li><a href="/tours en cusco/excursiones.html" id="resaltar2">Excursiones Varios Días</a></li>
+                <li><a href="/tours en cusco/Desde.html" id="resaltar2">Tours a Machu Picchu desde Cusco</a></li>
+            </ul>
+    
+        <li><a href="http://localhost/pag/contacto.php" id="resaltar1">Contacto</a></li>
+        <li><a href="/quejas.html" id="resaltar1">Quejas y Reclamos</a></li>
+        <li><a href="/login.html" class="user-icon">
+            <li>
+                <a href="/login.html" class="user-icon">
+                    <img src="/user-icon.png" alt="Usuario">
+                </a>
+            </li>
+</nav>
+
+<!-- Main Content -->
+<section class="tour-section">
+    <!-- Título y calificación -->
+    <div class="tour-header">
+        <h1>Tour Laguna Humantay full Day a la Joya Natural de los Andes</h1>
+        <span class="rating">9.4 / 10</span>
+    </div>
+
+   
+
+    <!-- Galería de imágenes -->
+    <div class="gallery">
+        <img src="/ImgCusco/Laguna1.jpg" alt="Imagen 1">
+        <img src="/ImgCusco/Laguna2.jpg" alt="Imagen 2">
+        <img src="/ImgCusco/Laguna3.jpg" alt="Imagen 3">
+        <img src="/ImgCusco/Laguna4.jpg" alt="Imagen 4">
+        <img src="/ImgCusco/Laguna5.jpg" alt="Imagen 5">
+    </div>
+
+    <!-- Secciones de descripción y detalles -->
+    <div class="section-tabs">
+        <a href="#descripcion" class="active">Descripción</a>
+        <a href="#detalles">Detalles</a>
+    </div>
+
+    <!-- Descripción del tour -->
+    <div class="description" id="descripcion">
+        <h2>Descripción</h2>
+        <p>
+            Explora la rica historia de Cusco en nuestro City Tour. Desde el esplendor arquitectónico del Monasterio de Santo Domingo en Qoricancha hasta las majestuosas ruinas de Sacsayhuaman y los enigmáticos sitios de Qenqo, Tambomachay y Puca Pucara, cada parada te sumergirá en la fascinante cultura inca. Descubre la magia de Cusco a medida que viajas por estos sitios históricos y disfruta de vistas panorámicas y experiencias únicas. ¡Reserva ahora para una tarde llena de descubrimientos y maravillas arqueológicas!
+        </p>
+    </div>
+   <!-- Carrito de compras -->
+   <div class="container">
+    <!-- Detalles del Tour para la Reserva -->
+    <div class="tour-details">
+        <h2>City Tour en Cusco</h2>
+        <form id="tour-form">
+            <label for="adultos">Adultos:</label>
+            <input type="number" id="adultos" name="adultos" min="1" value="1">
+
+            <label for="ninos">Niños:</label>
+            <input type="number" id="ninos" name="ninos" min="0" value="0">
+
+            <label for="fecha"><br>Fecha del Tour:</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <label for="hora">Hora del Tour:</label>
+            <select id="hora" name="hora" required>
+                <option value="">Seleccione una hora</option>
+                <option value="9:00 AM">9:00 AM</option>
+                <option value="14:00">14:00</option>
+            </select>
+
+            <label for="hotel">Hotel - Dirección de Recogida:</label>
+            <input type="text" id="hotel" name="hotel" required>
+
+            <label for="comentarios">Requisitos especiales y otra información relevante:</label>
+            <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+        </form>
+    </div>
+
+    <!-- Resumen de Compra -->
+    <div class="summary-box">
+        <h2>Resumen del Tour</h2>
+        <p>x <span id="total-adultos">1</span> Adulto</p>
+        <p>x <span id="total-ninos">0</span> Niño</p>
+        <hr>
+        <p>Subtotal: <span id="subtotal">120.00</span> US$</p>
+        <p>Cantidad de depósito: 
+            <select id="deposito" onchange="calcularTotal()">
+                <option value="100">100%</option>
+                <option value="50">50%</option>
+                <option value="25">25%</option>
+            </select>
+        </p>
+        <hr>
+        <p>Total: <strong id="total">120.00</strong> US$</p>
+        <button class="btn-reservar" onclick="reservar()">RESERVAR AHORA</button>
+    </div>
+</div>
+</section>
+
+<script>
+// Precios
+const precioAdulto = 120;
+const precioNino = 30;
+
+// Elementos del DOM
+const adultosInput = document.getElementById('adultos');
+const ninosInput = document.getElementById('ninos');
+const subtotalElement = document.getElementById('subtotal');
+const totalElement = document.getElementById('total');
+const totalAdultosElement = document.getElementById('total-adultos');
+const totalNinosElement = document.getElementById('total-ninos');
+const depositoSelect = document.getElementById('deposito');
+
+// TOTAL
+function calcularTotal() {
+    const numeroAdultos = parseInt(adultosInput.value);
+    const numeroNinos = parseInt(ninosInput.value);
+
+    // Actualizar cantidades en la sección de resumen
+    totalAdultosElement.textContent = numeroAdultos;
+    totalNinosElement.textContent = numeroNinos;
+
+    // SUBTOTAL
+    const subtotal = (numeroAdultos * precioAdulto) + (numeroNinos * precioNino);
+    subtotalElement.textContent = subtotal.toFixed(2);
+
+    // PORCENTAJE DE DEPOSITO
+    const porcentajeDeposito = parseInt(depositoSelect.value);
+    const total = (subtotal * porcentajeDeposito) / 100;
+    totalElement.textContent = total.toFixed(2);
+}
+
+// Escuchar cambios en el número de adultos y niños
+adultosInput.addEventListener('change', calcularTotal);
+ninosInput.addEventListener('change', calcularTotal);
+
+// Función para simular la reserva
+function reservar() {
+    alert("Reserva realizada exitosamente!");
+}
+
+// Inicializar el cálculo total
+calcularTotal();
+</script>
+</section>
+</body>
+<div class="footer">
+    <!-- Sección Contacto -->
+    <div class="footer-section contact-info">
+        <h3>CONTÁCTANOS</h3>
+        <p>+51 920 245 758</p>
+        <p>+51 957 587 720</p>
+        <p>+51 986 221 958</p>
+        <p><a href="mailto:info@incatrilogytours.com">info@incatrilogytours.com</a></p>
+        <p><a href="mailto:reservas@incatrilogytours.com">reservas@incatrilogytours.com</a></p>
+        <p>Jirón Lampa 231, Cercado de Lima</p>
+        <p>Av, Larco Miraflores 1150 - Local #17, Primer piso</p>
+    </div>
+
+    <!-- Sección Métodos de Pago -->
+    <div class="footer-section payment-methods">
+        <h3>MÉTODOS DE PAGO</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+        <img src="/img/western-union-current-logo.png" alt="Western Union">
+        <img src="/img/MGI_BIG.png" alt="MoneyGram">
+    </div>
+
+    <!-- Sección Horario -->
+    <div class="footer-section">
+        <h3>HORARIO DE OFICINA</h3>
+        <p class="horario">Lunes a Sábado: 9:00AM - 1:00PM | 4:00PM - 8:00PM</p>
+        <p class="horario">Domingos: 10:00AM - 7:00PM</p>
+        <h3>HORARIO DE EQUIPO DE VENTAS</h3>
+        <p class="horario">Lunes a Sábado: 9:00AM - 1:00PM | 4:00PM - 8:00PM</p>
+        <p class="horario">Domingos: 2:00PM - 6:00PM</p>
+    </div>
+
+    <!-- Sección Menú de Navegación -->
+    <div class="footer-section">
+        <h3>MENÚ DE NAVEGACIÓN</h3>
+        <ul>
+            <li><a href="#inicio" id="resaltar1">Inicio</a></li>
+            <li><a href="excursiones.html" id="resaltar1">Tours en Lima <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <li><a href="excursiones.html" id="resaltar1">Tours en Cusco <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <li><a href="#contacto" id="resaltar1">Contacto</a></li>
+            <li><a href="#inicio" id="resaltar1">Quejas y Reclamos</a></li>
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+    <p>&copy; Inca Trilogy Tours 2024. Todos los derechos reservados.</p>
+    <a href="#politica-privacidad">Política de Privacidad</a> | <a href="#terminos-condiciones">Términos y Condiciones</a>
+</div>
+</html>

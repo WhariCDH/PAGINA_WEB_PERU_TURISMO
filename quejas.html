@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Quejas y Reclamos</title>
+    <link rel="stylesheet" href="quejas.css">
+</head>
+<style>
+    /* Estilos del menú de navegación */
+    nav {
+            background-color: #4d7486;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffff99;
+        }
+
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #4d7486;
+            padding: 10px;
+            border-radius: 5px;
+            list-style: none;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul ul li {
+            padding: 8px 0;
+        }
+
+        nav ul ul li a {
+            color: white;
+            font-size: 14px;
+        }
+
+        nav ul ul li a:hover {
+            color: #ffff99;
+        }
+
+        .user-icon img {
+            width: 30px;
+            height: auto;
+        }
+    </style>
+    <body>
+         <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="/inicio.html" id="resaltar1">Inicio</a></li>
+            <li>
+                <a href="#" id="resaltar1">Tours en Lima <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul>
+                    <li><a href="/tours-en-lima/callao.html" id="resaltar2">Excursiones en Callao</a></li>
+                    <li><a href="/tours-en-lima/lunahuana.html" id="resaltar2">Tours en Lunahuana</a></li>
+                    <li><a href="/tours-en-lima/pachacamac.html" id="resaltar2">Tours en Pachacamac</a></li>
+                    <li><a href="/tours-en-lima/miraflores.html" id="resaltar2">Tours en Miraflores</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" id="resaltar1">Tours en Cusco <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul>
+                    <li><a href="/tours-en-cusco/tourcusco.html" id="resaltar2">Tour de un Día Cusco</a></li>
+                    <li><a href="/tours-en-cusco/excursiones.html" id="resaltar2">Excursiones Varios Días</a></li>
+                    <li><a href="/tours-en-cusco/machu-picchu.html" id="resaltar2">Tours a Machu Picchu</a></li>
+                </ul>
+            </li>
+            <li><a href="/contacto.php" id="resaltar1">Contacto</a></li>
+            <li><a href="/quejas.html" id="resaltar1">Quejas y Reclamos</a></li>
+            <li>
+                <a href="/login.html" class="user-icon">
+                    <img src="/user-icon.png" alt="Usuario">
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Formulario de quejas y reclamos -->
+    <div class="form-container">
+        <h1>QUEJAS Y/O RECLAMOS</h1>
+        <form id="complaintForm">
+            <div class="form-group">
+                <label for="name">Nombre Completo:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="tour">Tour Realizado:</label>
+                <select id="tour" name="tour" required>
+                    <option value="">Seleccione</option>
+                    <option value="Callao">Tours en Callao</option>
+                    <option value="Lunahuana">Tours en Lunahuana</option>
+                    <option value="Pachacamac">Tours en Pachacamac</option>
+                    <option value="Miraflores">Tours en Miraflores</option>
+                    <option value="Machu Picchu">Tours a Machu Picchu</option>
+                    <option value="Cusco">Tours en Cusco</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Descripción de la Queja o Reclamo:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Enviar</button>
+            </div>
+            <p class="success-message" id="successMessage" style="display: none;">¡Gracias! Hemos recibido su queja o reclamo.</p>
+        </form>
+    </div>
+    <script >
+        const form = document.getElementById("complaintForm");
+        const successMessage = document.getElementById("successMessage");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            successMessage.style.display = "block";
+        });
+    </script>
+</div>
+</body>
+</html>

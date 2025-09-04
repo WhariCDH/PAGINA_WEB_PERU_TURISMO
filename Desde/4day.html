@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Header fijo */
+nav {
+    background-color: #4d7486;
+    color: white;
+    padding: 1em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Contenedor principal */
+.tour-section {
+    max-width: 1200px;
+    margin: 80px auto 0; /* Ajuste por la barra fija */
+    padding: 2em;
+    background-color: rgb(216, 216, 216);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tour-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tour-header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.tour-header .rating {
+    font-size: 1.2em;
+    color: #ff0066;
+    font-weight: bold;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.section-tabs a {
+    text-decoration: none;
+    color: #000000;
+    padding: 10px;
+    border-bottom: 3px solid transparent;
+    font-weight: bold;
+}
+
+.section-tabs a.active {
+    border-bottom: 3px solid #000000;
+}
+
+/* Descripción y detalles */
+.description, .details {
+    margin-top: 20px;
+}
+
+.description h2, .details h2 {
+    color: #333;
+}
+
+.description p {
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Detalles */
+.details {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.details ul {
+    list-style: none;
+    padding: 0;
+    color: #555;
+}
+
+.details ul li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+/* Calendario de reservas */
+.reservation-box {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.calendar {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.btn-reservar {
+    background-color: #ff0066;
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reservar:hover {
+    background-color: #e6005c;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 2em;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tour-details, .booking-summary {
+    width: 48%;
+}
+
+.tour-details img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tour-details h2, .booking-summary h2 {
+    color: #333;
+}
+
+.tour-details p, .booking-summary p {
+    line-height: 1.6;
+    color: #555;
+}
+
+.tour-details input, .tour-details select, .tour-details textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.booking-summary {
+    text-align: center;
+}
+
+.booking-summary .btn-reservar {
+    background-color: #4d7486;
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.booking-summary .btn-reservar:hover {
+    background-color: #e6005c;
+}
+
+/* Otras experiencias */
+.otras-experiencias {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.experiencias-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.experiencia {
+    width: 30%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.experiencia img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-reservar {
+    background-color: #ff0066;
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-reservar:hover {
+    background-color: #e6005c;
+}
+
+.star-rating {
+    color: #f39c12;
+    font-weight: bold;
+}
+/* Footer General */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: Arial, sans-serif;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.footer p, .footer a, .footer li {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ffcc00;
+}
+
+/* Contacto */
+.contact-info p {
+    margin: 0;
+}
+
+/* Horarios */
+.footer .horario {
+    margin: 10px 0;
+}
+
+
+/* Estilos Adicionales */
+.payment-methods img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+html, body {
+height: 100%; 
+margin: 0; 
+}
+
+.footer-bottom {
+position: relative; 
+width: 100%;
+text-align: center;
+padding: 20px 0; 
+background-color:#333;
+bottom: 0; 
+}
+
+body {
+display: flex;
+flex-direction: column;
+min-height: 100vh; 
+}
+
+.main-content {
+flex: 1; 
+
+/* Adaptabilidad */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+}
+/* Footer General */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: Arial, sans-serif;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.footer p, .footer a, .footer li {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ffcc00;
+}
+
+/* Contacto */
+.contact-info p {
+    margin: 0;
+}
+
+/* Horarios */
+.footer .horario {
+    margin: 10px 0;
+}
+
+
+/* Estilos Adicionales */
+.payment-methods img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+html, body {
+height: 100%; 
+margin: 0; 
+}
+
+.footer-bottom {
+position: relative; 
+width: 100%;
+text-align: center;
+padding: 20px 0; 
+background-color:#333;
+bottom: 0; 
+}
+
+body {
+display: flex;
+flex-direction: column;
+min-height: 100vh; 
+}
+
+.main-content {
+flex: 1; 
+
+/* Adaptabilidad */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+} 
+
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <ul>
+        <li><a href="/inicio.html">Inicio</a></li>
+        <li><a href="/viaja.html">Tours</a></li>
+        <li><a href="/index.html">Página Principal</a></li>
+    </ul>
+</nav>
+
+<!-- Main Content -->
+<section class="tour-section">
+    <!-- Título y calificación -->
+    <div class="tour-header">
+        <h1>Tour camino de Inca 4 días – servicio privado</h1>
+        <span class="rating">9.4 / 10</span>
+    </div>
+
+   
+
+    <!-- Galería de imágenes -->
+    <div class="gallery">
+        <img src="/ImgDesde/1B.jpg" alt="Imagen 1">
+        <img src="/ImgDesde/2B.jpg" alt="Imagen 2">
+        <img src="/ImgDesde/3B.jpg" alt="Imagen 3">
+        <img src="/ImgDesde/4B.jpg" alt="Imagen 4">
+
+    </div>
+
+    <!-- Secciones de descripción y detalles -->
+    <div class="section-tabs">
+        <a href="#descripcion" class="active">Descripción</a>
+        <a href="#detalles">Detalles</a>
+    </div>
+
+    <!-- Descripción del tour -->
+    <div class="description" id="descripcion">
+        <h2>Descripción</h2>
+        <p>
+            Sumérgete en la esencia del Tour Camino Inca 4 días, una ruta de trekking reconocida a nivel mundial como una de las mejores en Sudamérica. Este viaje está diseñado para los amantes de la naturaleza y los exploradores de senderos ancestrales. Cada paso te llevará a descubrir lugares mágicos y a conectar con la historia en un viaje único. Comparte esta experiencia excepcional con tus seres queridos y disfruta de una conexión íntima y auténtica con el legado histórico y natural del Camino Inca.
+        </p>
+    </div>
+
+    <!-- Calendario de reservas -->
+    <div class="container">
+        <div class="tour-details">
+            <h2>Tour camino de Inca 4 días – servicio privado</h2>
+            <p>Duración: 4 Días / 3 Noches</p>
+            <p>Comprar: 24 Horas antes</p>
+            <p>Idioma: español & inglés</p>
+            <p>Pasajero mínimo: 2 Pasajeros</p>
+            <p>Salidas: 4:00 a.m.</p>
+            <form>
+                <label for="adults">NRO DE ADULTOS *</label>
+                <input type="number" id="adults" name="adults" value="2">
+                <label for="children">NRO DE NIÑOS *</label>
+                <input type="number" id="children" name="children" value="0">
+                <label for="date">FECHA *</label>
+                <input type="date" id="date" name="date">
+                <label for="time">HORA *</label>
+                <select id="time" name="time">
+                    <option value="">Seleccione un horario</option>
+                    <option value="10:00 a.m.">10:00 a.m.</option>
+                    <option value="12:00 p.m.">11:00 a.m.</option>
+                    <!-- Add time options here -->
+                </select>
+                <label for="hotel">HOTEL - DIRECCIÓN DE RECOJO *</label>
+                <input type="text" id="hotel" name="hotel">
+                <label for="special-requirements">REQUISITOS ESPECIALES Y OTRA INFORMACIÓN RELEVANTE</label>
+                <textarea id="special-requirements" name="special-requirements"></textarea>
+            </form>
+        </div>
+        <div class="booking-summary">
+            <h2>Resumen de la Reserva</h2>
+            <p>x 2 (Adultos)</p>
+            <p>Tours por el Camino Inca – Trekking Desde Cusco a Machu Picchu</p>
+            <p class="precio">$ 850.00 Por Persona</p>
+            <button class="btn-reservar">Reservar</button>
+        </div>
+    </div>
+
+</section>
+</body>
+<div class="footer">
+    <!-- Sección Contacto -->
+    <div class="footer-section contact-info">
+        <h3>CONTÁCTANOS</h3>
+        <p>+51 920 245 758</p>
+        <p>+51 957 587 720</p>
+        <p>+51 986 221 958</p>
+        <p><a href="mailto:info@incatrilogytours.com">info@incatrilogytours.com</a></p>
+        <p><a href="mailto:reservas@incatrilogytours.com">reservas@incatrilogytours.com</a></p>
+        <p>Jirón Lampa 231, Cercado de Lima</p>
+        <p>Av, Larco Miraflores 1150 - Local #17, Primer piso</p>
+    </div>
+
+    <!-- Sección Métodos de Pago -->
+    <div class="footer-section payment-methods">
+        <h3>MÉTODOS DE PAGO</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+        <img src="/img/western-union-current-logo.png" alt="Western Union">
+        <img src="/img/MGI_BIG.png" alt="MoneyGram">
+    </div>
+
+    <!-- Sección Horario -->
+    <div class="footer-section">
+        <h3>HORARIO DE OFICINA</h3>
+        <p class="horario">Lunes a Sábado: 9:00AM - 1:00PM | 4:00PM - 8:00PM</p>
+        <p class="horario">Domingos: 10:00AM - 7:00PM</p>
+        <h3>HORARIO DE EQUIPO DE VENTAS</h3>
+        <p class="horario">Lunes a Sábado: 9:00AM - 1:00PM | 4:00PM - 8:00PM</p>
+        <p class="horario">Domingos: 2:00PM - 6:00PM</p>
+    </div>
+
+    <!-- Sección Menú de Navegación -->
+    <div class="footer-section">
+        <h3>MENÚ DE NAVEGACIÓN</h3>
+        <ul>
+            <li><a href="#inicio" id="resaltar1">Inicio</a></li>
+            <li><a href="excursiones.html" id="resaltar1">Tours en Lima <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <li><a href="excursiones.html" id="resaltar1">Tours en Cusco <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <li><a href="#contacto" id="resaltar1">Contacto</a></li>
+            <li><a href="#inicio" id="resaltar1">Quejas y Reclamos</a></li>
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+    <p>&copy; Inca Trilogy Tours 2024. Todos los derechos reservados.</p>
+    <a href="#politica-privacidad">Política de Privacidad</a> | <a href="#terminos-condiciones">Términos y Condiciones</a>
+</div>
+</html>

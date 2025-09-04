@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inca Trilogy Tours</title>
+</head>
+    <style>
+     /* Estilos Generales */
+     body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(248, 248, 248);
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none; /* Esto elimina el subrayado */
+
+        }
+
+        h1 {
+            color: #333;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 24px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Menú de Navegación */
+        nav {
+            background-color: #4d7486;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffff99;
+        }
+
+        /* Submenús */
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #4d7486;
+            padding: 10px;
+            border-radius: 5px;
+            list-style: none;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul ul li {
+            padding: 8px 0;
+        }
+
+        nav ul ul li a {
+            color: white;
+            font-size: 14px;
+        }
+
+        nav ul ul li a:hover {
+            color: #ffff99;
+        }
+
+        /* Secciones */
+        section {
+            padding: 50px;
+            background-color: white;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section h1 {
+            font-size: 28px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border-bottom: 3px solid #4d7486;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* Estilos de los botones y enlaces */
+        #resaltar1 {
+        color: rgb(228, 228, 228);
+        font: size 5px;
+                 
+        }
+
+        #resaltar2 {
+            color: rgb(0, 0, 0);
+            font-size: 15pt;
+            font-style: italic;
+        }
+
+        /* Logo */
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+        .user-icon img {
+            width: 30px; /* Ajusta el tamaño de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-right: 10px; /* Espacio entre la imagen y el texto */
+        }
+   /* Sección principal de la página */
+.hero-section {
+    background-color: #ffffff;
+    background-image: url('your-image.jpg'); /* Imagen de fondo opcional */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: #003366; /* Azul oscuro */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Estilo para el contenido del header */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 20px;
+    color: #333333;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Estilo para la galería de imágenes dentro del header */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaciado entre las imágenes */
+    margin-top: 30px;
+}
+
+.image-gallery img {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo responsive para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    /* En pantallas pequeñas, las imágenes se apilan en lugar de estar en fila */
+    .image-gallery {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .image-gallery img {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+      /* Sección de inicio */
+       .inicio {
+         background-color: #f2f2f2;
+         padding: 50px 0;
+         text-align: center;
+        }
+
+    .contenido-inicio {
+      max-width: 1200px;
+      margin: 0 auto;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+    }
+
+    .texto-inicio {
+    flex: 1;
+    padding: 20px;
+}
+
+.texto-inicio h1 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.texto-inicio p {
+    font-size: 18px;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.btn-cta {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-cta:hover {
+    background-color: #2980b9;
+}
+
+/* Estilos para las imágenes */
+.imagenes-inicio {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.imagenes-inicio img {
+    width: 48%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+    /* Sección de Beneficios */
+.beneficios {
+    background-color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.beneficios h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+/* Contenedor de beneficios */
+.beneficios-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilo para cada beneficio */
+.beneficio {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+    
+}
+
+.beneficio:hover {
+    transform: translateY(-10px);
+}
+
+.beneficio img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.beneficio h3 {
+    font-size: 24px;
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+.beneficio p {
+    font-size: 16px;
+    color: #7f8c8d;
+    line-height: 1.5;
+}
+
+  /* Centrar el video */
+  .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: top 20px;
+            border: 4px;
+            height: 520px;
+            padding: 10px;
+
+            
+        }
+
+        /* Footer General */
+.footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin: 20px;
+        }
+
+        .footer h3 {
+            font-size: 18px;
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        .footer p, .footer a, .footer li {
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.6;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffcc00;
+        }
+
+        /* Contacto */
+        .contact-info p {
+            margin: 0;
+        }
+
+        /* Horarios */
+        .footer .horario {
+            margin: 10px 0;
+        }
+
+       
+        /* Estilos Adicionales */
+        .payment-methods img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        html, body {
+    height: 100%; 
+    margin: 0; 
+    }
+
+     .footer-bottom {
+    position: relative; 
+    width: 100%;
+    text-align: center;
+    padding: 20px 0; 
+    background-color:#333;
+    bottom: 0; 
+}
+
+    body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+   }
+
+   .main-content {
+    flex: 1; 
+   }
+
+       
+
+        
+    </style>
+</head>
+
+<body>
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="/inicio.html" id="resaltar1">Inicio</a></li>
+            <li><a href="" id="resaltar1">Tours en Lima <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul>
+                    <li><a href="/tours en lima/callao.html" id="resaltar2">Excursiones en Callao</a></li>
+                    <li><a href="/tours en lima/lunahuana.html" id="resaltar2">Tours en Lunahuana</a></li>
+                    <li><a href="/tours en lima/pachacamac.html" id="resaltar2">Tours en Pachacamac</a></li>
+                    <li><a href="/tours en lima/miraflores.html" id="resaltar2">Tours en Miraflores</a></li>
+                </ul>
+            </li>
+            <li><a href="excursiones.html" id="resaltar1">Tours en Cusco <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul>
+                    <li><a href="/tours en cusco/tourcusco.html" id="resaltar2">Tour de un dia Cusco</a></li>
+                    <li><a href="/tours en cusco/excursiones.html" id="resaltar2">Excursiones Varios Días</a></li>
+                    <li><a href="/tours en cusco/Desde.html" id="resaltar2">Tours a Machu Picchu desde Cusco</a></li>
+                </ul>
+        
+            <li><a href="http://localhost/pag/contacto.php" id="resaltar1">Contacto</a></li>
+            <li><a href="/quejas.html" id="resaltar1">Quejas y Reclamos</a></li>
+            <li><a href="/login.html" class="user-icon">
+                <li>
+                    <a href="/login.html" class="user-icon">
+                        <img src="/user-icon.png" alt="Usuario">
+                    </a>
+                </li>
+    </nav>
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Inca Trilogy Tours<br>
+                 | Tu Compañía Local para Explorar Perú |<br> 
+                 Planifica tu Aventura con los Mejores</h1>
+            <p>Perú es un país lleno de contrastes y maravillas, desde su vibrante costa hasta la majestuosidad de los Andes y la riqueza cultural de sus ciudades. Con esta selección de destinos imperdibles, descubrirás paisajes únicos, historias milenarias y experiencias inolvidables. Reserva con Inca Trilogy Tours, Tu compañía local para explorar Perú.</p>
+        </div>
+
+        <!-- Contenedor de imágenes -->
+        <div class="image-gallery">
+            <img src="/imginicio/city-tour-free.jpg" alt="Imagen 1">
+            <img src="/imginicio/MG_3512.jpg" alt="Imagen 2">
+            <img src="/imginicio/plaza-de-armas-de-lima.jpg" alt="Imagen 3">
+            <img src="/imginicio/san-francisco-de-asis-catacumbas-1.jpg" alt="Imagen 4">
+        </div>
+    </header>
+
+
+    <!-- Sección de inicio -->
+    <section class="inicio">
+        <div class="contenido-inicio">
+            <div class="texto-inicio">
+                <h1>¿Porque elegirnos?</h1>
+                <h2>Vive la mejor experiencia con Inca Trilogy Tours|Compañía Local para Explorar Perú.</h2>
+                <p>Aventuras en grupos reducidos y personalizados que llegan a tener un máximo de 10 personas 
+                    y guiados por expertos locales que harán de su viaje una experiencia extraordinaria. Todos los involucrados en nuestras operaciones son tratados y atendidos adecuadamente, 
+                    compartimos los beneficios del turismo con comunidades locales.</p>
+            </div>
+            <div class="imagenes-inicio">
+        <img src="https://th.bing.com/th/id/R.c57b59e240d629073e45f6c15d6baecb?rik=qpQYU5sqj2A9qw&pid=ImgRaw&r=0" alt="imagen 1">
+        <img src="https://th.bing.com/th/id/R.1908b06d7423bf4f8f462d82bd8156c5?rik=pdamARMbR1MsNw&pid=ImgRaw&r=0" alt="imagen 2">
+        <img src="https://th.bing.com/th/id/OIP.y-n7HhYJgPNfv4aV4ejGtgHaE0?rs=1&pid=ImgDetMain" alt="imagen 3">
+    </div>
+
+    </div>
+
+     <!-- Sección de Beneficios -->
+
+     <section class="beneficios">
+        <h2>¿Por qué reservar con Inca Trilogy Tours?</h2>
+        <div class="beneficios-container">
+            <div class="beneficio">
+                <img src="/imginicio/turismo.png" alt="Icono 1">
+                <h3>Satisfacción Garantizada</h3>
+                <p>Somos una empresa local, comprometida con el proceso de mejora continua, orientado a alcanzar la satisfacción de los clientes a más del 100%.</p>
+            </div>
+            <div class="beneficio">
+                <img src="/imginicio/visa-1.png" alt="Icono 2">
+                <h3>Mejores Precios</h3>
+                <p>Con Tintaya Travel, obtienes opciones y experiencias a precios cómodos. Accesibles, reserva ahora con 30% y luego al empezar el tour.</p>
+            </div>
+            <div class="beneficio">
+                <img src="/imginicio/viaje-y-turismo.png" alt="Icono 3">
+                <h3>Servicios Personalizados</h3>
+                <p>Ofrecemos servicio personalizados y de calidad con grupos pequeños no mayores a 16 personas.</p>
+            </div>
+            <div class="beneficio">
+                <img src="/imginicio/equipaje.png" alt="Icono 4">
+                <h3>+5000 Clientes</h3>
+                <p>+5000 mil clientes garantizan la calidad de nuestros servicios de turismo y hospedaje alrededor del Perú.</p>
+            </div>
+            <div class="beneficio">
+                <img src="/imginicio/cashless-payment.png" alt="Icono 5">
+                <h3>Reserva rápida</h3>
+                <p>Reserva con pasos simples, no mayores a 2 minutos, realiza tu reserva sin complicaciones de forma fácil y seguro.</p>
+            </div>
+            <div class="beneficio">
+                <img src="/imginicio/secure-payment.png" alt="Icono 6">
+                <h3>Pagos seguros</h3>
+                <p>Reserva tu tour solo con el 30% de forma segura, sin cargos ni moras por reservas o tarjetas de crédito.</p>
+            </div>
+        </div>
+        <section id="inicio">
+            <h1>Explore Perú</h1><br>
+            <div class="video-container">
+                <iframe width="1360" height="515" src="https://www.youtube.com/embed/hjE478UoFnk?si=HLueFZwzAIgVdpSb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+    </section>
+
+   <!-- Footer -->
+   <div class="footer">
+    <!-- Sección Contacto -->
+    <div class="footer-section contact-info">
+        <h3>CONTÁCTANOS</h3>
+        <p>+51 920 245 758</p>
+        <p>+51 957 587 720</p>
+        <p>+51 986 221 958</p>
+        <p><a href="mailto:info@incatrilogytours.com">info@incatrilogytours.com</a></p>
+        <p><a href="mailto:reservas@incatrilogytours.com">reservas@incatrilogytours.com</a></p>
+        <p>Jirón Lampa 231, Cercado de Lima</p>
+        <p>Av, Larco Miraflores 1150 - Local #17, Primer piso</p>
+    </div>
+
+    <!-- Sección Métodos de Pago -->
+    <div class="footer-section payment-methods">
+        <h3>MÉTODOS DE PAGO</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+
+    </div>
+
+    <!-- Sección Horario -->
+    <div class="footer-section">
+        <h3>HORARIO DE OFICINA</h3>
+        <p class="horario">Lunes a Sábado: 9:00AM - 1:00PM | 4:00PM - 8:00PM</p>
+        <p class="horario">Domingos: 10:00AM - 7:00PM</p>
+        <h3>HORARIO DE EQUIPO DE VENTAS</h3>
+        <p class="horario">Lunes a Sábado: 9:00AM - 1:00PM | 4:00PM - 8:00PM</p>
+        <p class="horario">Domingos: 2:00PM - 6:00PM</p>
+    </div>
+
+    <!-- Sección Menú de Navegación -->
+    <div class="footer-section">
+        <h3>MENÚ DE NAVEGACIÓN</h3>
+        <ul>
+            <li><a href="/inicio.html" id="resaltar1">Inicio</a></li>
+            <li><a href="/tours en lima/callao.html" id="resaltar1">Tours en Lima <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <li><a href="/tours en cusco/tourcusco.html" id="resaltar1">Tours en Cusco <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <li><a href="#contacto" id="resaltar1">Contacto</a></li>
+            <li><a href="/quejas.html" id="resaltar1">Quejas y Reclamos</a></li>
+        </ul>
+    </div>
+</div>
+<!-- Footer Bottom -->
+
+<div class="footer-bottom">
+    <p>&copy; Inca Trilogy Tours 2024. Todos los derechos reservados.</p>
+    <a href="#politica-privacidad">Política de Privacidad</a> | <a href="#terminos-condiciones">Términos y Condiciones</a>
+</div>
+</body>
+</html>

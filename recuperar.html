@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="login.css">  
+    <script defer src="recuperar.js"></script>
+</head>
+<body>
+  <div class="cajafuera" align="center">
+    <div class="formulariocaja">
+      <form id="recuperarForm" name="recuperarForm" onsubmit="return validarRecuperacion()">
+        <!-- Correo electrónico para recuperación -->
+        <input type="email" id="txcorreo" name="txcorreo" placeholder="&#9993; Correo electrónico" class="cajaentradatexto" required>
+        
+        <!-- Botón para enviar la solicitud de recuperación -->
+        <input type="submit" value="Recuperar Contraseña" class="botonenviar">
+        
+        <!-- Botón de cancelar -->
+        <input type="reset" value="Cancelar" class="botonenviar">
+        
+        <div class="ref1">
+            <div align="center">
+                <a href="/registrar.html" style="text-decoration: none; color: rgb(255, 255, 255); border: none; background: none;">Registrar</a> / 
+                <a href="login.html" style="text-decoration: none; color: rgb(255, 255, 255); border: none; background: none;">Iniciar sesión</a>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div> 
+</body>
+</html>
