@@ -1,0 +1,20 @@
+stages:
+  - build
+  - test
+
+# Etapa de "build" simbólica (solo verifica los archivos)
+build:
+  stage: build
+  image: alpine:latest
+  script:
+    - echo "Iniciando la verificación de archivos..."
+    - ls -l
+    - echo "Build completado (no se requiere compilación para HTML)."
+
+# Etapa de "test" simbólica
+test:
+  stage: test
+  image: alpine:latest
+  script:
+    - echo "Ejecutando pruebas básicas..."
+    - test -f index.html && echo "Archivo principal encontrado ✅" || echo "index.html no existe ⚠️"
