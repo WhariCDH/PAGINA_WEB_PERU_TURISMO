@@ -1,0 +1,18 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: ubuntu:latest  # Imagen liviana de Ubuntu, no necesitas dependencias adicionales
+    steps:
+      - checkout
+      - run:
+          name: Mostrar mensaje de éxito
+          command: |
+            echo "El proyecto está listo. No se requieren pasos adicionales."
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
