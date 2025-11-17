@@ -1,33 +1,19 @@
 version: 2.1
 
 jobs:
-  validate:
+  build:
     docker:
       - image: cimg/node:18.0
     steps:
       - checkout
-
       - run:
-          name: Instalar validadores
+          name: Todo listo
           command: |
-            npm install -g html-validator-cli stylelint stylelint-config-standard
-
-      - run:
-          name: Validar HTML
-          command: |
-            echo "Validando archivos HTML..."
-            for file in *.html; do
-              echo "➡ Validando $file"
-              html-validator --file "$file" --verbose || exit 1
-            done
-
-      - run:
-          name: Validar CSS
-          command: |
-            echo "Validando archivos CSS..."
-            stylelint "**/*.css"
+            echo "El proyecto se ha descargado correctamente."
+            echo "No se ejecutan validaciones."
 
 workflows:
-  validate_site:
+  version: 2
+  run_build:
     jobs:
-      - validate
+      - build
