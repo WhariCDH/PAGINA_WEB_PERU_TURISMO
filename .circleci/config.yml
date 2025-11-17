@@ -1,18 +1,29 @@
 version: 2.1
 
 jobs:
-  build:
+  validate:
     docker:
-      - image: ubuntu:latest  # Imagen liviana de Ubuntu, no necesitas dependencias adicionales
+      - image: cimg/node:18.0
     steps:
       - checkout
+
       - run:
-          name: Mostrar mensaje de éxito
+          name: Instalar validadores
           command: |
-            echo "El proyecto está listo. No se requieren pasos adicionales."
+            npm install -g html-validator-cli stylelint stylelint-config-standard
+
+      - run:
+          name: Validar HTML
+          command: |
+            html-validator --file index.html --verbose
+
+      - run:
+          name: Validar CSS
+          command: |
+            stylelint "**/*.css"
 
 workflows:
   version: 2
-  build_and_test:
+  validate_site:
     jobs:
-      - build
+      - validate
