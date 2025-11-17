@@ -15,7 +15,8 @@ jobs:
       - run:
           name: Validar HTML
           command: |
-            html-validator --file index.html --verbose
+            html-validator --file PAGINA_WEB_PERU_TURISMO/index.html --verbose
+
 
       - run:
           name: Validar CSS
