@@ -15,16 +15,19 @@ jobs:
       - run:
           name: Validar HTML
           command: |
-            html-validator --file PAGINA_WEB_PERU_TURISMO/index.html --verbose
-
+            echo "Validando archivos HTML..."
+            for file in *.html; do
+              echo "➡ Validando $file"
+              html-validator --file "$file" --verbose || exit 1
+            done
 
       - run:
           name: Validar CSS
           command: |
+            echo "Validando archivos CSS..."
             stylelint "**/*.css"
 
 workflows:
-  version: 2
   validate_site:
     jobs:
       - validate
