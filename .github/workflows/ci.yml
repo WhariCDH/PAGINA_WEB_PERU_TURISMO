@@ -2,46 +2,42 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main, master, feature/* ]
+    branches: 
+      - main        # ← Solo se ejecuta cuando hay cambios en main
   pull_request:
-    branches: [ main, master ]
+    branches: 
+      - main
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout código
-        uses: actions/checkout@v4
-      - name: Pruebas unitarias (simulado)
-        run: echo "Ejecutando pruebas unitarias..."
+      - uses: actions/checkout@v4
+      - run: echo "Ejecutando pruebas unitarias..."
 
   quality:
     runs-on: ubuntu-latest
     needs: test
     steps:
-      - name: Checkout código
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Análisis SonarQube (simulado)
         run: |
           echo "Iniciando análisis de calidad con SonarQube (simulado)..."
-          echo "Escaneando código fuente..."
-          echo "Subiendo resultados al servidor SonarQube..."
+          echo "Escaneando código fuente del proyecto..."
+          echo "Resultado: 0 vulnerabilidades críticas, 0 bugs bloqueantes."
+          echo "Se recomienda mantener buenas prácticas de codificación y revisiones periódicas."
           echo "Análisis completado - Quality Gate: PASSED ✓"
 
   build:
     runs-on: ubuntu-latest
     needs: quality
     steps:
-      - name: Checkout código
-        uses: actions/checkout@v4
-      - name: Build del proyecto (simulado)
-        run: echo "Construyendo el proyecto..."
+      - uses: actions/checkout@v4
+      - run: echo "Construyendo el proyecto..."
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Checkout código
-        uses: actions/checkout@v4
-      - name: Deploy (simulado)
-        run: echo "Desplegando la aplicación..."
+      - uses: actions/checkout@v4
+      - run: echo "Desplegando la aplicación..."
