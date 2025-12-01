@@ -78,4 +78,79 @@ Pasos principales:
 - Milagros  
 - WhariCDH (líder del proyecto)
 
+🐳 Instrucciones para la Contenerización con Docker
+
+A continuación, se incluyen las instrucciones requeridas para desplegar este proyecto mediante Docker y Docker Compose.
+
+📦 1. Construcción de la imagen (docker build)
+
+Para construir la imagen del proyecto desde el Dockerfile ubicado en la raíz, ejecutar:
+
+docker build -t peru_turismo_web .
+
+
+Esto generará una imagen llamada peru_turismo_web, la cual utiliza php:8.2-apache para servir el sitio web.
+
+▶️ 2. Ejecución del sistema (docker-compose up)
+
+Para iniciar el proyecto utilizando Docker Compose:
+
+docker-compose up
+
+
+Para ejecutarlo en segundo plano:
+
+docker-compose up -d
+
+
+Para detener los contenedores:
+
+docker-compose down
+
+🌐 3. Endpoints relevantes
+
+Una vez levantado el contenedor, acceder al sitio en:
+
+Sitio principal
+
+👉 http://localhost:8080/
+
+Páginas incluidas
+
+Inicio: http://localhost:8080/inicio.html
+
+Login: http://localhost:8080/login.html
+
+Registro: http://localhost:8080/registrar.html
+
+Excursiones: http://localhost:8080/excursiones.html
+
+Tours Lima: http://localhost:8080/tours-lima.html
+
+Tours Cusco: http://localhost:8080/tours-cusco.html
+
+Quejas: http://localhost:8080/quejas.html
+
+Contacto (formulario PHP): http://localhost:8080/contacto.php
+
+🔧 4. Variables de entorno necesarias
+
+El proyecto no requiere variables de entorno obligatorias para funcionar, ya que es un sitio web HTML con un script PHP.
+
+Sin embargo, si en el futuro se agregan servicios como envíos de correo o base de datos, se puede utilizar un archivo .env.
+
+Ejemplo opcional:
+
+MAIL_HOST=smtp.ejemplo.com
+MAIL_USER=usuario
+MAIL_PASS=secreto
+
+
+Y en docker-compose.yml:
+
+environment:
+  - MAIL_HOST=${MAIL_HOST}
+  - MAIL_USER=${MAIL_USER}
+  - MAIL_PASS=${MAIL_PASS}
+
 > 🧭 *Este repositorio forma parte del proyecto académico “Perú Turismo”, orientado a la modernización de la gestión turística mediante el uso de tecnologías web y buenas prácticas de control de versiones.*
