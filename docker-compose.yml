@@ -6,6 +6,4 @@ services:
     container_name: pagina_web_peru_turismo
     ports:
       - "8080:80"
-    volumes:
-      - .:/var/www/html
     restart: always
