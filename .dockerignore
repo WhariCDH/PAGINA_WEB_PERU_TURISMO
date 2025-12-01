@@ -1,0 +1,10 @@
+Dockerfile
+docker-compose.yml
+README.md
+.git
+.gitignore
+composer.lock
+composer.json
+*/.env
+/vendor
+/node_modules
